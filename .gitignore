@@ -1,12 +1,11 @@
-tags
-test.sh
-.luarc.json
-nvim
+# Neovim swap/undo files
+*.swp
+*.swo
+undo/
 
-spell/
-
-# You can uncomment this yourself if you want to lock the lazy-lock.json,
-# but for kickstart, it makes sense to leave it ignored.
+# Lazy.nvim plugin folders (DO NOT UPLOAD THESE)
+lazy/
 lazy-lock.json
 
-.DS_Store
+# Logs
+*.log
