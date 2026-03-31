@@ -410,6 +410,14 @@ require('lazy').setup({
       -- Telescope picker. This is really useful to discover what Telescope can
       -- do as well as how to actually do it!
 
+      vim.o.autoread = true
+      vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
+        pattern = '*',
+        callback = function()
+          if vim.fn.mode() ~= 'c' then vim.cmd 'checktime' end
+        end,
+      })
+
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
       require('telescope').setup {
